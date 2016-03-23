@@ -5,7 +5,7 @@ module.exports = function() {
   process.on('message', function (message) {
     console.log(
       'message to worker ' + process.pid +
-      ' from master: ' + JSON.stringify(message)
+      'from master:' + JSON.stringify(message)
     );
     process.send({
       result: message.task.map(function(item) {

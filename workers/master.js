@@ -24,7 +24,8 @@ module.exports = function() {
         'message from worker ' + worker.process.pid + ': ' +
         JSON.stringify(message)
       );
-      results.push(message.result);
+      results = Array.prototype.slice.call(message.result);
+	  console.log(results);
 
       if (results.length === cpuCount) {
         process.exit(1);
